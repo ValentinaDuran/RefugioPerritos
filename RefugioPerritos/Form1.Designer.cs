@@ -42,6 +42,8 @@
             this.cbEdadAprox = new System.Windows.Forms.ComboBox();
             this.btVer = new System.Windows.Forms.Button();
             this.dgvPerros = new System.Windows.Forms.DataGridView();
+            this.label7 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPerros)).BeginInit();
             this.SuspendLayout();
             // 
@@ -90,7 +92,7 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(380, 159);
+            this.comboBox1.Location = new System.Drawing.Point(477, 92);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 23);
             this.comboBox1.TabIndex = 8;
@@ -136,7 +138,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(380, 115);
+            this.label6.Location = new System.Drawing.Point(511, 70);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(48, 15);
             this.label6.TabIndex = 13;
@@ -168,11 +170,33 @@
             this.dgvPerros.Size = new System.Drawing.Size(240, 150);
             this.dgvPerros.TabIndex = 16;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(408, 145);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(54, 15);
+            this.label7.TabIndex = 17;
+            this.label7.Text = "Castrado";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(511, 145);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(83, 19);
+            this.checkBox1.TabIndex = 18;
+            this.checkBox1.Text = "checkBox1";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.dgvPerros);
             this.Controls.Add(this.btVer);
             this.Controls.Add(this.cbEdadAprox);
@@ -211,5 +235,7 @@
         private ComboBox cbEdadAprox;
         private Button btVer;
         private DataGridView dgvPerros;
+        private Label label7;
+        private CheckBox checkBox1;
     }
 }
