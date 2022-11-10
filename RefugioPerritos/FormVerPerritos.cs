@@ -2,14 +2,22 @@ namespace RefugioPerritos
 {
     public partial class FormVerPerritos : Form
     {
+        private ReglasDeNegocio reglasDeNegocio;
         public FormVerPerritos()
         {
             InitializeComponent();
+            reglasDeNegocio = new ReglasDeNegocio();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            CargarPerritoEnDGV();
+        }
 
+        private void CargarPerritoEnDGV() 
+        {
+           List<Perrito> perritos = reglasDeNegocio.GetPerritos();
+            dgvPerros.DataSource = perritos;
         }
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)

@@ -56,7 +56,47 @@ namespace RefugioPerritos
               conexion.Close();
             }
         
-        
+        }
+
+        public List<Perrito> GetPerritos() 
+        {
+            List<Perrito> perritos = new List<Perrito>();
+            try
+            {
+                conexion.Open();
+                string query = @"  SELECT perritoDNI, nombre_perro, edad_aprox, color_cuerpo, color_ojos, castrado, fecha_ingreso, NombreRefugioId
+                                   From Perrito";
+
+                SqlCommand command = new SqlCommand(query, conexion);
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    perritos.Add(new Perrito
+                    {
+                        perritoDNI = int.Parse(reader["perritoDNI"].ToString()),
+                        nombre_perro = reader["nombre_perro"].ToString(),
+                        edad_aprox = int.Parse(reader["edad_aprox"].ToString()),
+                        color_cuerpo = reader["color_cuerpo"].ToString(),
+                        color_ojos = reader["color_ojos"].ToString(),
+                        castrado = Convert.ToBoolean(reader["castrado"]),
+                        //Aca me tira error :(
+                        fecha_ingreso = Convert.ToDateTime(reader["fecha_ingreso"]).Date,
+                        NombreRefugioId = reader["NombreRefugioId"].ToString(),
+                    });
+
+
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally { conexion.Close(); }
+
+            return perritos;
         
         }
     }

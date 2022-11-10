@@ -29,5 +29,10 @@ namespace RefugioPerritos
             //}
             return perrito;
         }
+
+        public List<Perrito> GetPerritos() 
+        {
+          return accesoADatos.GetPerritos();
+        }
     }
 }

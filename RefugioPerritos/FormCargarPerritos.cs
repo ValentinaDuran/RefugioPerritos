@@ -29,6 +29,11 @@ namespace RefugioPerritos
 
         private void btCargar_Click(object sender, EventArgs e)
         {
+            SavePerrito();
+        }
+
+        private void SavePerrito() 
+        {
             Perrito perrito = new Perrito();
             perrito.nombre_perro = txtNombre.Text;
             perrito.edad_aprox = int.Parse(txtEdadAprox.Text);
@@ -40,6 +45,8 @@ namespace RefugioPerritos
             perrito.NombreRefugioId = cboxRefugios.Text;
 
             reglasDeNegocio.SavePerrito(perrito);
+
+
         }
     }
 }
