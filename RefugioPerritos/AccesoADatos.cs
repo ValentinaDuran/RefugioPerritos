@@ -58,7 +58,26 @@ namespace RefugioPerritos
         
         }
 
-        public List<Perrito> GetPerritos() 
+        public void DeletePerrito(int DNI)
+        {
+            try
+            {
+                conexion.Open();
+                string query = @"DELETE FROM Perrito WHERE perritoDNI = @DNI";
+
+                SqlCommand command = new SqlCommand(query, conexion);
+                command.Parameters.Add(new SqlParameter("@DNI", DNI));
+
+                command.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally { conexion.Close(); }
+        }
+        public List<Perrito> GetPerritos(string buscar = null) 
         {
             List<Perrito> perritos = new List<Perrito>();
             try
@@ -67,7 +86,16 @@ namespace RefugioPerritos
                 string query = @"  SELECT perritoDNI, nombre_perro, edad_aprox, color_cuerpo, color_ojos, castrado, fecha_ingreso, NombreRefugioId
                                    From Perrito";
 
-                SqlCommand command = new SqlCommand(query, conexion);
+                SqlCommand command = new SqlCommand();
+
+                if (!string.IsNullOrEmpty(buscar))
+                {
+                    query += @" WHERE nombre_perro LIKE @Buscar OR NombreRefugioId LIKE @Buscar ";
+                    command.Parameters.Add(new SqlParameter("@Buscar", $"%{buscar}%"));
+                }
+
+                command.CommandText = query;
+                command.Connection = conexion;
 
                 SqlDataReader reader = command.ExecuteReader();
 
@@ -81,7 +109,6 @@ namespace RefugioPerritos
                         color_cuerpo = reader["color_cuerpo"].ToString(),
                         color_ojos = reader["color_ojos"].ToString(),
                         castrado = Convert.ToBoolean(reader["castrado"]),
-                        //Aca me tira error :(
                         fecha_ingreso = Convert.ToDateTime(reader["fecha_ingreso"]).Date,
                         NombreRefugioId = reader["NombreRefugioId"].ToString(),
                     });
@@ -99,5 +126,7 @@ namespace RefugioPerritos
             return perritos;
         
         }
+
+        
     }
 }

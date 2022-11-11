@@ -14,9 +14,9 @@ namespace RefugioPerritos
             CargarPerritoEnDGV();
         }
 
-        private void CargarPerritoEnDGV() 
+        public void CargarPerritoEnDGV(string buscarPerro = null) 
         {
-           List<Perrito> perritos = reglasDeNegocio.GetPerritos();
+           List<Perrito> perritos = reglasDeNegocio.GetPerritos(buscarPerro);
             dgvPerros.DataSource = perritos;
         }
 
@@ -37,9 +37,32 @@ namespace RefugioPerritos
         private void AbrirFormCargarPerritosDialog() 
         {
             FormCargarPerritos formCargarPerritos = new FormCargarPerritos();
-            formCargarPerritos.ShowDialog();
+            formCargarPerritos.ShowDialog(this);
         }
         
+        
+
+        private void dgvPerros_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewLinkCell cell = (DataGridViewLinkCell)dgvPerros.Rows[e.RowIndex].Cells[e.ColumnIndex];
+
+            if (cell.Value.ToString() == "Eliminar")
+            {
+                EliminarPerrito(int.Parse(dgvPerros.Rows[e.RowIndex].Cells[0].Value.ToString()));
+                CargarPerritoEnDGV();
+            }
+        }
+
+        private void EliminarPerrito(int DNI)
+        {
+            reglasDeNegocio.DeletePerrito(DNI);
+        }
+
+        private void btVer_Click(object sender, EventArgs e)
+        {
+            CargarPerritoEnDGV(txtBuscarPerrito.Text);
+            txtBuscarPerrito.Text = string.Empty;
+        }
 
         //private void label1_Click(object sender, EventArgs e)
         //{

@@ -30,9 +30,15 @@ namespace RefugioPerritos
             return perrito;
         }
 
-        public List<Perrito> GetPerritos() 
+        public List<Perrito> GetPerritos(string buscarPerro = null) 
         {
-          return accesoADatos.GetPerritos();
+          return accesoADatos.GetPerritos(buscarPerro);
+        }
+
+        public void DeletePerrito(int DNI)
+        {
+            accesoADatos.DeletePerrito(DNI);
+            
         }
     }
 }

@@ -30,6 +30,8 @@ namespace RefugioPerritos
         private void btCargar_Click(object sender, EventArgs e)
         {
             SavePerrito();
+            this.Close();
+            ((FormVerPerritos)this.Owner).CargarPerritoEnDGV();
         }
 
         private void SavePerrito() 

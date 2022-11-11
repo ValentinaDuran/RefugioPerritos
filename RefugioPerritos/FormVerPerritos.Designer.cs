@@ -30,9 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgvPerros = new System.Windows.Forms.DataGridView();
-            this.btVer = new System.Windows.Forms.Button();
-            this.btnVerCargaPerrito = new System.Windows.Forms.Button();
-            this.perritoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.perritoDNIDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreperroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.edadaproxDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,6 +38,12 @@
             this.castradoDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.fechaingresoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreRefugioIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.perritoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btVer = new System.Windows.Forms.Button();
+            this.btnVerCargaPerrito = new System.Windows.Forms.Button();
+            this.lblBuscarPerro = new System.Windows.Forms.Label();
+            this.txtBuscarPerrito = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPerros)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.perritoBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -57,36 +60,15 @@
             this.colorojosDataGridViewTextBoxColumn,
             this.castradoDataGridViewCheckBoxColumn,
             this.fechaingresoDataGridViewTextBoxColumn,
-            this.nombreRefugioIdDataGridViewTextBoxColumn});
+            this.nombreRefugioIdDataGridViewTextBoxColumn,
+            this.Eliminar});
             this.dgvPerros.DataSource = this.perritoBindingSource;
-            this.dgvPerros.Location = new System.Drawing.Point(22, 138);
+            this.dgvPerros.Location = new System.Drawing.Point(33, 139);
             this.dgvPerros.Name = "dgvPerros";
             this.dgvPerros.RowTemplate.Height = 25;
-            this.dgvPerros.Size = new System.Drawing.Size(841, 285);
+            this.dgvPerros.Size = new System.Drawing.Size(943, 285);
             this.dgvPerros.TabIndex = 16;
-            // 
-            // btVer
-            // 
-            this.btVer.Location = new System.Drawing.Point(94, 75);
-            this.btVer.Name = "btVer";
-            this.btVer.Size = new System.Drawing.Size(75, 23);
-            this.btVer.TabIndex = 15;
-            this.btVer.Text = "Ver Perritos";
-            this.btVer.UseVisualStyleBackColor = true;
-            // 
-            // btnVerCargaPerrito
-            // 
-            this.btnVerCargaPerrito.Location = new System.Drawing.Point(407, 75);
-            this.btnVerCargaPerrito.Name = "btnVerCargaPerrito";
-            this.btnVerCargaPerrito.Size = new System.Drawing.Size(75, 23);
-            this.btnVerCargaPerrito.TabIndex = 17;
-            this.btnVerCargaPerrito.Text = "Cargar Perrito";
-            this.btnVerCargaPerrito.UseVisualStyleBackColor = true;
-            this.btnVerCargaPerrito.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // perritoBindingSource
-            // 
-            this.perritoBindingSource.DataSource = typeof(RefugioPerritos.Perrito);
+            this.dgvPerros.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPerros_CellContentClick);
             // 
             // perritoDNIDataGridViewTextBoxColumn
             // 
@@ -136,11 +118,61 @@
             this.nombreRefugioIdDataGridViewTextBoxColumn.HeaderText = "NombreRefugioId";
             this.nombreRefugioIdDataGridViewTextBoxColumn.Name = "nombreRefugioIdDataGridViewTextBoxColumn";
             // 
+            // Eliminar
+            // 
+            this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.ReadOnly = true;
+            this.Eliminar.Text = "Eliminar";
+            this.Eliminar.UseColumnTextForLinkValue = true;
+            // 
+            // perritoBindingSource
+            // 
+            this.perritoBindingSource.DataSource = typeof(RefugioPerritos.Perrito);
+            // 
+            // btVer
+            // 
+            this.btVer.Location = new System.Drawing.Point(901, 88);
+            this.btVer.Name = "btVer";
+            this.btVer.Size = new System.Drawing.Size(75, 23);
+            this.btVer.TabIndex = 15;
+            this.btVer.Text = "Ver Perritos";
+            this.btVer.UseVisualStyleBackColor = true;
+            this.btVer.Click += new System.EventHandler(this.btVer_Click);
+            // 
+            // btnVerCargaPerrito
+            // 
+            this.btnVerCargaPerrito.Location = new System.Drawing.Point(901, 49);
+            this.btnVerCargaPerrito.Name = "btnVerCargaPerrito";
+            this.btnVerCargaPerrito.Size = new System.Drawing.Size(75, 23);
+            this.btnVerCargaPerrito.TabIndex = 17;
+            this.btnVerCargaPerrito.Text = "Cargar Perrito";
+            this.btnVerCargaPerrito.UseVisualStyleBackColor = true;
+            this.btnVerCargaPerrito.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // lblBuscarPerro
+            // 
+            this.lblBuscarPerro.AutoSize = true;
+            this.lblBuscarPerro.Location = new System.Drawing.Point(33, 76);
+            this.lblBuscarPerro.Name = "lblBuscarPerro";
+            this.lblBuscarPerro.Size = new System.Drawing.Size(73, 15);
+            this.lblBuscarPerro.TabIndex = 18;
+            this.lblBuscarPerro.Text = "Buscar Perro";
+            // 
+            // txtBuscarPerrito
+            // 
+            this.txtBuscarPerrito.Location = new System.Drawing.Point(142, 73);
+            this.txtBuscarPerrito.Name = "txtBuscarPerrito";
+            this.txtBuscarPerrito.Size = new System.Drawing.Size(334, 23);
+            this.txtBuscarPerrito.TabIndex = 19;
+            // 
             // FormVerPerritos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(886, 450);
+            this.ClientSize = new System.Drawing.Size(1005, 450);
+            this.Controls.Add(this.txtBuscarPerrito);
+            this.Controls.Add(this.lblBuscarPerro);
             this.Controls.Add(this.btnVerCargaPerrito);
             this.Controls.Add(this.dgvPerros);
             this.Controls.Add(this.btVer);
@@ -150,6 +182,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvPerros)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.perritoBindingSource)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -157,6 +190,7 @@
         private DataGridView dgvPerros;
         private Button btVer;
         private Button btnVerCargaPerrito;
+        private BindingSource perritoBindingSource;
         private DataGridViewTextBoxColumn perritoDNIDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn nombreperroDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn edadaproxDataGridViewTextBoxColumn;
@@ -165,6 +199,8 @@
         private DataGridViewCheckBoxColumn castradoDataGridViewCheckBoxColumn;
         private DataGridViewTextBoxColumn fechaingresoDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn nombreRefugioIdDataGridViewTextBoxColumn;
-        private BindingSource perritoBindingSource;
+        private DataGridViewLinkColumn Eliminar;
+        private Label lblBuscarPerro;
+        private TextBox txtBuscarPerrito;
     }
 }
