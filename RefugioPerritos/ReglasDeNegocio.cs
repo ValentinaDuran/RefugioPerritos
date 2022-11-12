@@ -40,5 +40,16 @@ namespace RefugioPerritos
             accesoADatos.DeletePerrito(DNI);
             
         }
+
+        public List<Refugio> GetRefugios() 
+        {
+            return accesoADatos.GetRefugios();
+        }
+
+        public List<Refugio> GetRefugiosDGV() 
+        {
+            return accesoADatos.GetRefugiosDGV();
+        
+        }
     }
 }

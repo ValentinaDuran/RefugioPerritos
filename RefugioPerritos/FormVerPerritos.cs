@@ -64,6 +64,18 @@ namespace RefugioPerritos
             txtBuscarPerrito.Text = string.Empty;
         }
 
+        private void btVerRefugios_Click(object sender, EventArgs e)
+        {
+            AbrirFormVerRefugiosDialog();
+        }
+
+        private void AbrirFormVerRefugiosDialog()
+        {
+            FormRefugios formRefugios = new FormRefugios();
+            formRefugios.ShowDialog(this);
+        }
+
+
         //private void label1_Click(object sender, EventArgs e)
         //{
 

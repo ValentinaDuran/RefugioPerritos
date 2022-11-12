@@ -127,6 +127,74 @@ namespace RefugioPerritos
         
         }
 
+        public List<Refugio> GetRefugios() 
+        {
+           List<Refugio> refugios = new List<Refugio>();
+            try
+            {
+                conexion.Open();
+                string query = "SELECT NombreRefugioID FROM Refugio";
+
+                SqlCommand command = new SqlCommand(query, conexion);
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    refugios.Add(new Refugio
+                    {
+                        NombreRefugioId = reader["NombreRefugioID"].ToString()
+                    });
+                }
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally { conexion.Close();  }
+
+            return refugios;
         
+        }
+
+        public List<Refugio> GetRefugiosDGV() 
+        {
+            List<Refugio> refugios = new List<Refugio>();
+            try
+            {
+                conexion.Open();
+                string query = "SELECT NombreRefugioID, direccion, telefono, persona_a_cargo, hora_apertura, hora_cierre FROM Refugio";
+
+                SqlCommand command = new SqlCommand(query, conexion);
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    refugios.Add(new Refugio
+                    {
+                        NombreRefugioId = reader["NombreRefugioID"].ToString(),
+                        direccion = reader["direccion"].ToString(),
+                        telefono = decimal.Parse(reader["telefono"].ToString()),
+                        persona_a_cargo = reader["persona_a_cargo"].ToString(),
+                        //Los dos de abajo dan error!!
+                        hora_apertura = Convert.ToDateTime(reader["hora_apertura"]),
+                        hora_cierre = Convert.ToDateTime(reader["fecha_ingreso"])
+                    });
+                }
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally { conexion.Close(); }
+
+            return refugios;
+
+        }
     }
 }

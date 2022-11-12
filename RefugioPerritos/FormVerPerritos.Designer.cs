@@ -44,6 +44,7 @@
             this.btnVerCargaPerrito = new System.Windows.Forms.Button();
             this.lblBuscarPerro = new System.Windows.Forms.Label();
             this.txtBuscarPerrito = new System.Windows.Forms.TextBox();
+            this.btVerRefugios = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPerros)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.perritoBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -132,7 +133,7 @@
             // 
             // btVer
             // 
-            this.btVer.Location = new System.Drawing.Point(901, 88);
+            this.btVer.Location = new System.Drawing.Point(499, 73);
             this.btVer.Name = "btVer";
             this.btVer.Size = new System.Drawing.Size(75, 23);
             this.btVer.TabIndex = 15;
@@ -142,7 +143,7 @@
             // 
             // btnVerCargaPerrito
             // 
-            this.btnVerCargaPerrito.Location = new System.Drawing.Point(901, 49);
+            this.btnVerCargaPerrito.Location = new System.Drawing.Point(780, 41);
             this.btnVerCargaPerrito.Name = "btnVerCargaPerrito";
             this.btnVerCargaPerrito.Size = new System.Drawing.Size(75, 23);
             this.btnVerCargaPerrito.TabIndex = 17;
@@ -166,11 +167,22 @@
             this.txtBuscarPerrito.Size = new System.Drawing.Size(334, 23);
             this.txtBuscarPerrito.TabIndex = 19;
             // 
+            // btVerRefugios
+            // 
+            this.btVerRefugios.Location = new System.Drawing.Point(780, 91);
+            this.btVerRefugios.Name = "btVerRefugios";
+            this.btVerRefugios.Size = new System.Drawing.Size(107, 26);
+            this.btVerRefugios.TabIndex = 20;
+            this.btVerRefugios.Text = "Ver Refugios";
+            this.btVerRefugios.UseVisualStyleBackColor = true;
+            this.btVerRefugios.Click += new System.EventHandler(this.btVerRefugios_Click);
+            // 
             // FormVerPerritos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1005, 450);
+            this.Controls.Add(this.btVerRefugios);
             this.Controls.Add(this.txtBuscarPerrito);
             this.Controls.Add(this.lblBuscarPerro);
             this.Controls.Add(this.btnVerCargaPerrito);
@@ -202,5 +214,6 @@
         private DataGridViewLinkColumn Eliminar;
         private Label lblBuscarPerro;
         private TextBox txtBuscarPerrito;
+        private Button btVerRefugios;
     }
 }

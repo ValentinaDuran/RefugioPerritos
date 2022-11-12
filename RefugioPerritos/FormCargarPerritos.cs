@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace RefugioPerritos
 {
@@ -20,6 +21,7 @@ namespace RefugioPerritos
         {
             InitializeComponent();
             reglasDeNegocio = new ReglasDeNegocio();
+            CargarRefugioEnCbox();
         }
 
         private void btnSalirDeCarga_Click(object sender, EventArgs e)
@@ -50,5 +52,16 @@ namespace RefugioPerritos
 
 
         }
+
+        private void CargarRefugioEnCbox() 
+        {
+            List<Refugio> refugios = reglasDeNegocio.GetRefugios();
+
+            cboxRefugios.ValueMember = "id";
+            cboxRefugios.DisplayMember = "name";
+            cboxRefugios.DataSource = refugios;
+        
+        }
+
     }
 }
