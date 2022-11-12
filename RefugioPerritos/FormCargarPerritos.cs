@@ -56,11 +56,10 @@ namespace RefugioPerritos
         private void CargarRefugioEnCbox() 
         {
             List<Refugio> refugios = reglasDeNegocio.GetRefugios();
-
-            cboxRefugios.ValueMember = "id";
-            cboxRefugios.DisplayMember = "name";
             cboxRefugios.DataSource = refugios;
-        
+            cboxRefugios.ValueMember = "NombreRefugioId";
+            cboxRefugios.DisplayMember = "NombreRefugioId";
+
         }
 
     }
