@@ -22,6 +22,13 @@ namespace RefugioPerritos
             InitializeComponent();
             reglasDeNegocio = new ReglasDeNegocio();
             CargarRefugioEnCbox();
+            //this.cboxRefugios.DropDownStyle = ComboBoxStyle.DropDownList;
+            ////string Texto1 = "Refugios";
+            //if (cboxRefugios.SelectedIndex = 1)
+            //{
+            //    cboxRefugios.Text = "Refugios";
+            //}
+            //cboxRefugios.SelectedIndex = System.Convert.ToInt32 (Texto1);
         }
 
         private void btnSalirDeCarga_Click(object sender, EventArgs e)
@@ -62,5 +69,9 @@ namespace RefugioPerritos
 
         }
 
+        private void txtEdadAprox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

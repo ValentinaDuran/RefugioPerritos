@@ -51,9 +51,9 @@
             this.checkCastrado.AutoSize = true;
             this.checkCastrado.Location = new System.Drawing.Point(544, 186);
             this.checkCastrado.Name = "checkCastrado";
-            this.checkCastrado.Size = new System.Drawing.Size(83, 19);
+            this.checkCastrado.Size = new System.Drawing.Size(73, 19);
             this.checkCastrado.TabIndex = 32;
-            this.checkCastrado.Text = "checkBox1";
+            this.checkCastrado.Text = "Castrado";
             this.checkCastrado.UseVisualStyleBackColor = true;
             // 
             // label7
@@ -61,9 +61,8 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(441, 186);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(54, 15);
+            this.label7.Size = new System.Drawing.Size(0, 15);
             this.label7.TabIndex = 31;
-            this.label7.Text = "Castrado";
             // 
             // label6
             // 
@@ -119,7 +118,6 @@
             this.cboxRefugios.Name = "cboxRefugios";
             this.cboxRefugios.Size = new System.Drawing.Size(121, 23);
             this.cboxRefugios.TabIndex = 24;
-            this.cboxRefugios.Text = "Refugios";
             // 
             // txtPelo
             // 
@@ -177,6 +175,7 @@
             this.txtEdadAprox.Name = "txtEdadAprox";
             this.txtEdadAprox.Size = new System.Drawing.Size(100, 23);
             this.txtEdadAprox.TabIndex = 34;
+            this.txtEdadAprox.TextChanged += new System.EventHandler(this.txtEdadAprox_TextChanged);
             // 
             // datetimeFechaIngreso
             // 
