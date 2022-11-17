@@ -13,8 +13,8 @@ namespace RefugioPerritos
         private string Direccion;
         private decimal Telefono;
         private string Persona_a_cargo;
-        private DateTime Hora_apertura;
-        private DateTime Hora_cierre;
+        //private string Hora_apertura;
+        //private string Hora_cierre;
 
         public string NombreRefugioId
         {
@@ -36,16 +36,16 @@ namespace RefugioPerritos
             get { return Persona_a_cargo; }
             set { Persona_a_cargo = value; }
         }
-        public DateTime hora_apertura
-        {
-            get { return Hora_apertura; }
-            set { Hora_apertura = value; }
-        }
-        public DateTime hora_cierre
-        {
-            get { return Hora_cierre; }
-            set { Hora_cierre = value; }
-        }
+        //public string hora_apertura
+        //{
+        //    get { return Hora_apertura; }
+        //    set { Hora_apertura = value; }
+        //}
+        //public string hora_cierre
+        //{
+        //    get { return Hora_cierre; }
+        //    set { Hora_cierre = value; }
+        //}
 
     }
 }

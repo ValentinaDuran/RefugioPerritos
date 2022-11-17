@@ -165,7 +165,7 @@ namespace RefugioPerritos
             try
             {
                 conexion.Open();
-                string query = "SELECT NombreRefugioID, direccion, telefono, persona_a_cargo, hora_apertura, hora_cierre FROM Refugio";
+                string query = "SELECT NombreRefugioID, direccion, telefono, persona_a_cargo FROM Refugio";
 
                 SqlCommand command = new SqlCommand(query, conexion);
 
@@ -180,8 +180,9 @@ namespace RefugioPerritos
                         telefono = decimal.Parse(reader["telefono"].ToString()),
                         persona_a_cargo = reader["persona_a_cargo"].ToString(),
                         //Los dos de abajo dan error!!
-                        hora_apertura = Convert.ToDateTime(reader["hora_apertura"]),
-                        hora_cierre = Convert.ToDateTime(reader["fecha_ingreso"])
+
+                        //hora_apertura = reader["fecha_apertura"].ToString(),
+                        //hora_cierre = reader["fecha_ingreso"].ToString()
                     });
                 }
 
