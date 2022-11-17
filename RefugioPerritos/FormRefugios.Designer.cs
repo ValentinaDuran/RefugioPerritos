@@ -45,10 +45,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::RefugioPerritos.Properties.Resources.Patitas_wallpaper;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dgvRefugios);
             this.Name = "FormRefugios";
-            this.Text = "FormRefugios";
+            this.Text = "Info de los refugios";
             this.Load += new System.EventHandler(this.FormRefugios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRefugios)).EndInit();
             this.ResumeLayout(false);

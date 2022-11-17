@@ -143,7 +143,7 @@
             // 
             // btnVerCargaPerrito
             // 
-            this.btnVerCargaPerrito.Location = new System.Drawing.Point(780, 41);
+            this.btnVerCargaPerrito.Location = new System.Drawing.Point(699, 73);
             this.btnVerCargaPerrito.Name = "btnVerCargaPerrito";
             this.btnVerCargaPerrito.Size = new System.Drawing.Size(75, 23);
             this.btnVerCargaPerrito.TabIndex = 17;
@@ -169,7 +169,7 @@
             // 
             // btVerRefugios
             // 
-            this.btVerRefugios.Location = new System.Drawing.Point(780, 91);
+            this.btVerRefugios.Location = new System.Drawing.Point(822, 70);
             this.btVerRefugios.Name = "btVerRefugios";
             this.btVerRefugios.Size = new System.Drawing.Size(107, 26);
             this.btVerRefugios.TabIndex = 20;
@@ -181,7 +181,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1005, 450);
+            this.BackgroundImage = global::RefugioPerritos.Properties.Resources.Patitas_wallpaper;
+            this.ClientSize = new System.Drawing.Size(1017, 450);
             this.Controls.Add(this.btVerRefugios);
             this.Controls.Add(this.txtBuscarPerrito);
             this.Controls.Add(this.lblBuscarPerro);
@@ -189,7 +190,7 @@
             this.Controls.Add(this.dgvPerros);
             this.Controls.Add(this.btVer);
             this.Name = "FormVerPerritos";
-            this.Text = "Form1";
+            this.Text = "Refugio Iefi";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPerros)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.perritoBindingSource)).EndInit();

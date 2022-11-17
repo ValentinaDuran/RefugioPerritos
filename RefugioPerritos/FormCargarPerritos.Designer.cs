@@ -189,6 +189,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::RefugioPerritos.Properties.Resources.Patitas_wallpaper;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.datetimeFechaIngreso);
             this.Controls.Add(this.txtEdadAprox);
@@ -207,7 +208,7 @@
             this.Controls.Add(this.btCargar);
             this.Controls.Add(this.label1);
             this.Name = "FormCargarPerritos";
-            this.Text = "FormCargarPerritos";
+            this.Text = "Ingresar";
             this.ResumeLayout(false);
             this.PerformLayout();
 
