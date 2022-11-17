@@ -29,5 +29,10 @@ namespace RefugioPerritos
             List<Refugio> refugios = reglasDeNegocio.GetRefugiosDGV();
             dgvRefugios.DataSource = refugios;
         }
+
+        private void btVolverDeInfoRefugios_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -42,11 +42,14 @@
             this.perritoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btVer = new System.Windows.Forms.Button();
             this.btnVerCargaPerrito = new System.Windows.Forms.Button();
-            this.lblBuscarPerro = new System.Windows.Forms.Label();
             this.txtBuscarPerrito = new System.Windows.Forms.TextBox();
             this.btVerRefugios = new System.Windows.Forms.Button();
+            this.pboxTituloIefi = new System.Windows.Forms.PictureBox();
+            this.pboxFiltrarPerrito = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPerros)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.perritoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxTituloIefi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxFiltrarPerrito)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvPerros
@@ -64,10 +67,10 @@
             this.nombreRefugioIdDataGridViewTextBoxColumn,
             this.Eliminar});
             this.dgvPerros.DataSource = this.perritoBindingSource;
-            this.dgvPerros.Location = new System.Drawing.Point(33, 139);
+            this.dgvPerros.Location = new System.Drawing.Point(33, 198);
             this.dgvPerros.Name = "dgvPerros";
             this.dgvPerros.RowTemplate.Height = 25;
-            this.dgvPerros.Size = new System.Drawing.Size(943, 285);
+            this.dgvPerros.Size = new System.Drawing.Size(943, 254);
             this.dgvPerros.TabIndex = 16;
             this.dgvPerros.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPerros_CellContentClick);
             // 
@@ -133,59 +136,85 @@
             // 
             // btVer
             // 
-            this.btVer.Location = new System.Drawing.Point(499, 73);
+            this.btVer.BackColor = System.Drawing.Color.Transparent;
+            this.btVer.BackgroundImage = global::RefugioPerritos.Properties.Resources.Boton_Buscar;
+            this.btVer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btVer.FlatAppearance.BorderSize = 0;
+            this.btVer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btVer.Location = new System.Drawing.Point(494, 103);
             this.btVer.Name = "btVer";
-            this.btVer.Size = new System.Drawing.Size(75, 23);
+            this.btVer.Size = new System.Drawing.Size(75, 61);
             this.btVer.TabIndex = 15;
-            this.btVer.Text = "Ver Perritos";
-            this.btVer.UseVisualStyleBackColor = true;
+            this.btVer.UseVisualStyleBackColor = false;
             this.btVer.Click += new System.EventHandler(this.btVer_Click);
             // 
             // btnVerCargaPerrito
             // 
-            this.btnVerCargaPerrito.Location = new System.Drawing.Point(699, 73);
+            this.btnVerCargaPerrito.BackColor = System.Drawing.Color.Transparent;
+            this.btnVerCargaPerrito.BackgroundImage = global::RefugioPerritos.Properties.Resources.Boton_Cargar;
+            this.btnVerCargaPerrito.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnVerCargaPerrito.FlatAppearance.BorderSize = 0;
+            this.btnVerCargaPerrito.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVerCargaPerrito.Location = new System.Drawing.Point(665, 101);
             this.btnVerCargaPerrito.Name = "btnVerCargaPerrito";
-            this.btnVerCargaPerrito.Size = new System.Drawing.Size(75, 23);
+            this.btnVerCargaPerrito.Size = new System.Drawing.Size(75, 63);
             this.btnVerCargaPerrito.TabIndex = 17;
-            this.btnVerCargaPerrito.Text = "Cargar Perrito";
-            this.btnVerCargaPerrito.UseVisualStyleBackColor = true;
+            this.btnVerCargaPerrito.UseVisualStyleBackColor = false;
             this.btnVerCargaPerrito.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // lblBuscarPerro
-            // 
-            this.lblBuscarPerro.AutoSize = true;
-            this.lblBuscarPerro.Location = new System.Drawing.Point(33, 76);
-            this.lblBuscarPerro.Name = "lblBuscarPerro";
-            this.lblBuscarPerro.Size = new System.Drawing.Size(73, 15);
-            this.lblBuscarPerro.TabIndex = 18;
-            this.lblBuscarPerro.Text = "Buscar Perro";
             // 
             // txtBuscarPerrito
             // 
-            this.txtBuscarPerrito.Location = new System.Drawing.Point(142, 73);
+            this.txtBuscarPerrito.Location = new System.Drawing.Point(154, 130);
             this.txtBuscarPerrito.Name = "txtBuscarPerrito";
             this.txtBuscarPerrito.Size = new System.Drawing.Size(334, 23);
             this.txtBuscarPerrito.TabIndex = 19;
             // 
             // btVerRefugios
             // 
-            this.btVerRefugios.Location = new System.Drawing.Point(822, 70);
+            this.btVerRefugios.BackColor = System.Drawing.Color.Transparent;
+            this.btVerRefugios.BackgroundImage = global::RefugioPerritos.Properties.Resources.Boton_Info;
+            this.btVerRefugios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btVerRefugios.FlatAppearance.BorderSize = 0;
+            this.btVerRefugios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btVerRefugios.Location = new System.Drawing.Point(33, 12);
             this.btVerRefugios.Name = "btVerRefugios";
-            this.btVerRefugios.Size = new System.Drawing.Size(107, 26);
+            this.btVerRefugios.Size = new System.Drawing.Size(67, 58);
             this.btVerRefugios.TabIndex = 20;
-            this.btVerRefugios.Text = "Ver Refugios";
-            this.btVerRefugios.UseVisualStyleBackColor = true;
+            this.btVerRefugios.UseVisualStyleBackColor = false;
             this.btVerRefugios.Click += new System.EventHandler(this.btVerRefugios_Click);
+            // 
+            // pboxTituloIefi
+            // 
+            this.pboxTituloIefi.BackColor = System.Drawing.Color.Transparent;
+            this.pboxTituloIefi.Image = global::RefugioPerritos.Properties.Resources.Titutlo_Iefi;
+            this.pboxTituloIefi.Location = new System.Drawing.Point(764, 1);
+            this.pboxTituloIefi.Name = "pboxTituloIefi";
+            this.pboxTituloIefi.Size = new System.Drawing.Size(241, 180);
+            this.pboxTituloIefi.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pboxTituloIefi.TabIndex = 21;
+            this.pboxTituloIefi.TabStop = false;
+            // 
+            // pboxFiltrarPerrito
+            // 
+            this.pboxFiltrarPerrito.BackColor = System.Drawing.Color.Transparent;
+            this.pboxFiltrarPerrito.Image = global::RefugioPerritos.Properties.Resources.Label_Filtrar_nombre;
+            this.pboxFiltrarPerrito.Location = new System.Drawing.Point(33, 83);
+            this.pboxFiltrarPerrito.Name = "pboxFiltrarPerrito";
+            this.pboxFiltrarPerrito.Size = new System.Drawing.Size(115, 109);
+            this.pboxFiltrarPerrito.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pboxFiltrarPerrito.TabIndex = 22;
+            this.pboxFiltrarPerrito.TabStop = false;
             // 
             // FormVerPerritos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::RefugioPerritos.Properties.Resources.Patitas_wallpaper;
-            this.ClientSize = new System.Drawing.Size(1017, 450);
+            this.ClientSize = new System.Drawing.Size(1017, 477);
+            this.Controls.Add(this.pboxFiltrarPerrito);
+            this.Controls.Add(this.pboxTituloIefi);
             this.Controls.Add(this.btVerRefugios);
             this.Controls.Add(this.txtBuscarPerrito);
-            this.Controls.Add(this.lblBuscarPerro);
             this.Controls.Add(this.btnVerCargaPerrito);
             this.Controls.Add(this.dgvPerros);
             this.Controls.Add(this.btVer);
@@ -194,6 +223,8 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPerros)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.perritoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxTituloIefi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxFiltrarPerrito)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -213,8 +244,9 @@
         private DataGridViewTextBoxColumn fechaingresoDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn nombreRefugioIdDataGridViewTextBoxColumn;
         private DataGridViewLinkColumn Eliminar;
-        private Label lblBuscarPerro;
         private TextBox txtBuscarPerrito;
         private Button btVerRefugios;
+        private PictureBox pboxTituloIefi;
+        private PictureBox pboxFiltrarPerrito;
     }
 }

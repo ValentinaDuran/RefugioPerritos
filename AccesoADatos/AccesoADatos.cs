@@ -9,8 +9,11 @@ namespace RefugioPerritos
 {
     public class AccesoADatos
     {
-        //private SqlConnection conexion = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=RefugioIefi;Data Source=DESKTOP-1MHAK99");
-        private SqlConnection conexion = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=RefugioIefi;Data Source=DESKTOP-2GN82FI\\SQLEXPRESS");
+        //Luca
+        private SqlConnection conexion = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=RefugioIefi;Data Source=DESKTOP-1MHAK99");
+        
+        //Val
+        //private SqlConnection conexion = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=RefugioIefi;Data Source=DESKTOP-2GN82FI\\SQLEXPRESS");
         public void InsertarPerrito(Perrito perrito) 
         {
             try
